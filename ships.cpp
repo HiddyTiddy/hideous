@@ -8,6 +8,7 @@
 /**
  * @brief Yggdrasil's --ship command
  * @details takes in two names of type <std::string> and returns a calculated ship score <int> 
+ * DEPRECATED AS OF MAY 15TH, 2021 DUE TO UPDATE YGGDRASIL 
  */
 int ship(std::string A, std::string B)
 {
@@ -136,6 +137,8 @@ namespace StringToInt
 int main(int argc, char *argv[])
 {
 
+    printf("NOTE: THIS VERSION IS NOT ACCURATE ANYMORE\n")
+    
     if (argc==2){
 
         std::string arg = argv[1];
