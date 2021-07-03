@@ -8,27 +8,36 @@ std::string brainfuck(std::string code)
     std::string out = "";
     for (size_t i = 0; i < code.length(); i++)
     {
+        // brainfuck only has 8 commands, all of which are one character
+        // therefore a simple switch statement is enough
         switch (code.at(i))
         {
         case '>':
+            // move pointer to the right
             p++;
             break;
         case '<':
+            // move pointer to the left
             p--;
             break;
         case '+':
+            // increment cell at pointer
             cells[p]++;
             break;
         case '-':
+            // decrement cell at pointer
             cells[p]--;
             break;
         case '.':
+            // add cell character value to output string (don't print, only buffer to return in the end)
             out += cells[p];
             break;
         case ',':
+            // insert input character into cell at pointer
             std::cin>>cells[p];
             break;
         case ']':
+            // jump back to corresponding opening bracket
             if (cells[p])
             {
                 int depth = 1;
@@ -43,6 +52,7 @@ std::string brainfuck(std::string code)
             }
             break;
         default:
+            // ignore everything else
             break;
         }
     }
