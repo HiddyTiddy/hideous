@@ -20,3 +20,23 @@ $ echo "12345" | factorize
 
 Date: Feb 22
 
+
+## brainfuck.cpp
+Command line interpreter for [Brainfuck](https://esolangs.org/wiki/Brainfuck)
+
+```bash
+brainfuck "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."
+echo "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++." | brainfuck
+```
+
+Date: `i forgor`
+
+## bfc.cpp
+Compiler for [Brainfuck](https://esolangs.org/wiki/Brainfuck)
+
+```bash
+echo "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++." > source.bf
+bfc source.bf -o hello
+```
+
+Date: 25.09.21
