@@ -2,6 +2,7 @@
 random projects
 
 ## ships.cpp
+!!! DOESNT WORK ANYMORE BTW !!!
 Program to generate perfect ships for the --ship command of the [Yggdrasil Discord Bot](https://ygg.fun/)
 
 research and development time: 18th of April – 20th of April
