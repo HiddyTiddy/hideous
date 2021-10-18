@@ -83,6 +83,8 @@ int lang(char *grid, int width, int height, int x0, int y0)
         if (ptr_x > width || ptr_x < 0 || ptr_y > height || ptr_y < 0)
             return -1;
         char ch = *(grid + ptr_x + width * ptr_y);
+        //printf("\n%c (%d %d) %d", ch, ptr_x, ptr_y);
+        // if (!stck.empty()) printf("\n%d", stck.top());
         // printf("%c %d\n", ch, ch);
         if (in_str)
         {
@@ -207,7 +209,7 @@ int lang(char *grid, int width, int height, int x0, int y0)
             break;
         case '!':
             a =pop(&stck); 
-            stck.push(a != 0);
+            stck.push(a == 0);
             break;
         case '`':
             a =pop(&stck); 
@@ -221,14 +223,14 @@ int lang(char *grid, int width, int height, int x0, int y0)
             stck.pop();
             break;
         case '|':
-            if (stck.top() != 0 && momentum_x != 0)
+            if (pop(&stck) != 0 && momentum_x != 0)
             {
                 momentum_x = -momentum_x; // = 0
                 momentum_y = momentum_y;
             }
             break;
         case '_':
-            if (stck.top() != 0 && momentum_y != 0)
+            if (pop(&stck) != 0 && momentum_y != 0)
             {
                 momentum_x = momentum_x; // = 0
                 momentum_y = -momentum_y;
